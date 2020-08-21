@@ -75,6 +75,7 @@ nav, h1 {
 
 .nav-item {
   text-align: left;
+  /* TODO add styling to nav item colors & hover */
 }
 
 .bg-pink, .bg-purple {
