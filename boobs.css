@@ -1,45 +1,114 @@
+:root {
+  --bg: #e1e4f0;
+  --purple-bg: #9da6cd;
+  --dark-bg: #615aaa;
+}
+
 body {
   background-color: white;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   /* font-weight: 700; */
 }
 
 .container-fluid {
-  padding: 1em;
+  width: calc(100% - 10vh);
+  padding: 3rem 0;
 }
 
-img {
-  padding: 1em;
-  max-width: 100%;
+.box {
+  display: flex;
 }
 
-.logo {
-  max-width: 80%;
+.content-header {
+  text-align: center;
 }
 
-.circle {
-  border-radius: 100%;
+.bio {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-#top {
-  margin-top: 2em;
+nav, h1 {
+  background-color: white;
+}
+
+.link-chart {
+  display: flex;
+  width: 100%;
+}
+
+/* DESKTOP STYLES: GENERAL */
+@media (min-width: 768px) {
+  #me {
+    width: 20rem;
+  }
+  nav {
+    height: 5vh;
+    margin: 0.5rem;
+    border-radius: 10px;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .container-fluid {
+    margin-top: 5vh;
+  }
+  .link-chart {
+    flex-direction: row;
+  }
+}
+
+/* HUGE DISPLAY STYLES */
+@media (min-width: 1500px) {
+  #me {
+    width: 30rem;
+  }
+  .box {
+    flex-direction: row;
+  }
+  .container-fluid {
+    margin-top: calc(5vh - 2rem);
+  }
+  .link-chart {
+    margin: 0 2rem;
+    justify-content: space-around;
+  }
+}
+
+/* MOBILE STYLES */
+
+@media (max-width: 767px) {
+  #me {
+    width: 85%;
+  }
+  nav {
+    height: 6vh;
+    margin: 0;
+    border-radius: 0 0 1rem 1rem;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .container-fluid{
+    margin-top: 6vh;
+  }
+  .link-chart {
+    flex-direction: column;
+  }
 }
 
 section {
-  padding: 1em 0 2em 0  ;
+  padding: 1em 0 2em 0;
   /* border-bottom: 2px #c4a3ff solid; */
 }
 
 h1 {
   font-style: italic;
-  color: #007df3;
+  font-weight: 600;
+  color: var(--purple-bg);
   text-align: center;
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #ff00ff;
-  padding: 1em;
+  background-color: var(--bg);
+  border-radius: 10px;
 }
 
 h3 {
@@ -49,7 +118,7 @@ h3 {
 }
 
 p {
-  color: #8c52ff;
+  color: var(--dark-bg);
   padding: 0.5em;
   margin: 1em auto;
 }
@@ -59,23 +128,18 @@ p {
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: white;
-  padding: 1em;
-}
-
-nav, h1 {
-  background-color: #cae9ff;
-  border-radius: 10px;
-  width: calc(100%-2em);
+  background-color: rgba(255, 255, 255, 0.5)
 }
 
 .navbar-toggler {
   border: none;
+  padding: 0;
+  font-size: 1em;
 }
 
-.nav-item {
+.navbar-light .navbar-nav .nav-link {
   text-align: left;
-  /* TODO add styling to nav item colors & hover */
+  color: var(--purple-bg);
 }
 
 .bg-pink, .bg-purple {
