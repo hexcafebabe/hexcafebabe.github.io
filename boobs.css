@@ -24,17 +24,60 @@ body {
 }
 
 .bio {
-  font-weight: bold;
-  font-size: 1.5rem;
+  margin: 1rem;
 }
 
-nav, h1 {
-  background-color: white;
+.link-chart-container {
+  width: 100%;
+  margin: auto;
 }
 
 .link-chart {
   display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
   width: 100%;
+  background-color: var(--bg);
+}
+
+.link-subsection {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.link-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.link {
+  font-size: 1.2rem;
+}
+
+.link-header, .link {
+  margin: 0;
+  padding: 0.5rem;
+  color: var(--dark-bg);
+}
+
+.link:hover {
+  background-color: var(--purple-bg);
+  color: var(--dark-bg);
+  border-radius: 1rem;
+  text-decoration: underline;
+}
+
+.space {
+  height: 10vh;
+  bottom: 5px;
 }
 
 /* DESKTOP STYLES: GENERAL */
@@ -56,6 +99,9 @@ nav, h1 {
   .link-chart {
     flex-direction: row;
   }
+  .link-subsection {
+    border-right: 2px rgba(255, 255, 255, 0.75) solid;
+  }
 }
 
 /* HUGE DISPLAY STYLES */
@@ -71,12 +117,11 @@ nav, h1 {
   }
   .link-chart {
     margin: 0 2rem;
-    justify-content: space-around;
+    position: relative;
   }
 }
 
 /* MOBILE STYLES */
-
 @media (max-width: 767px) {
   #me {
     width: 85%;
@@ -86,6 +131,9 @@ nav, h1 {
     margin: 0;
     border-radius: 0 0 1rem 1rem;
   }
+  .navbar-light .navbar-nav .nav-link {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
   .box {
     flex-direction: column;
   }
@@ -94,6 +142,11 @@ nav, h1 {
   }
   .link-chart {
     flex-direction: column;
+    padding: 0px 1rem;
+  }
+  .link-subsection {
+    margin: 0;
+    border-bottom: 3px rgba(255, 255, 255, 0.75) solid;
   }
 }
 
@@ -103,12 +156,11 @@ section {
 }
 
 h1 {
-  font-style: italic;
   font-weight: 600;
   color: var(--purple-bg);
   text-align: center;
-  background-color: var(--bg);
-  border-radius: 10px;
+  padding: 0;
+  font-size: 2rem;
 }
 
 h3 {
@@ -128,7 +180,7 @@ p {
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5)
+  background-color: rgba(255, 255, 255, 0.75)
 }
 
 .navbar-toggler {
