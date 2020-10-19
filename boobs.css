@@ -24,10 +24,10 @@ body {
 }
 
 .bio {
-  margin: 1rem;
+  margin: 0 0 2rem;
 }
 
-.link-chart-container {
+.section-container {
   width: 100%;
   margin: auto;
 }
@@ -38,6 +38,14 @@ body {
   /* align-items: center; */
   width: 100%;
   background-color: var(--bg);
+  border-radius: 1rem;
+}
+
+.customs-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .link-subsection {
@@ -56,6 +64,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   font-style: italic;
+  text-align: center;
 }
 
 .link {
@@ -69,10 +78,9 @@ body {
 }
 
 .link:hover {
-  background-color: var(--purple-bg);
-  color: var(--dark-bg);
-  border-radius: 1rem;
+  color: var(--purple-bg);
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .space {
@@ -96,6 +104,9 @@ body {
   .container-fluid {
     margin-top: 5vh;
   }
+  .section-container {
+    padding: 0 1rem;
+  }
   .link-chart {
     flex-direction: row;
   }
@@ -107,17 +118,23 @@ body {
 /* HUGE DISPLAY STYLES */
 @media (min-width: 1500px) {
   #me {
-    width: 30rem;
+    width: 35rem;
   }
-  .box {
+  .box, .customs-chart {
     flex-direction: row;
   }
   .container-fluid {
     margin-top: calc(5vh - 2rem);
   }
-  .link-chart {
-    margin: 0 2rem;
-    position: relative;
+  .section-container {
+    padding: 0 6rem;
+  }
+  .customs-chart > .column {
+    max-width: 50%;
+    margin: auto;
+  }
+  .space {
+    height: 30vh;
   }
 }
 
@@ -140,13 +157,20 @@ body {
   .container-fluid{
     margin-top: 6vh;
   }
-  .link-chart {
+  .section-container {
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+  .link-chart, .customs-chart {
     flex-direction: column;
     padding: 0px 1rem;
   }
   .link-subsection {
     margin: 0;
     border-bottom: 3px rgba(255, 255, 255, 0.75) solid;
+  }
+  .customs-chart > .column {
+    width: 100%;
   }
 }
 
@@ -160,13 +184,14 @@ h1 {
   color: var(--purple-bg);
   text-align: center;
   padding: 0;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
-h3 {
+.question {
   font-size: 1.5em;
   padding: 1em;
-  color: #007df3;
+  background-color: var(--bg);
+  border-radius: 1rem;
 }
 
 p {
